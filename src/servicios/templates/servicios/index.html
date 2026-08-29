@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% block contenido %}
+    <main>
+        <h1>Servicios</h1>
+        <section>
+            <h2>CRUD Servicios</h2>
+            <ol>
+                <li><a href="{% url 'servicios:servicio_list' %}">Listar</a></li>
+                <li><a href="{% url 'servicios:servicio_create' %}">Crear</a></li>
+            </ol>
+        </section>
+        <div>
+            <a href="{% url 'core:home' %}">Volver</a>
+        </div>
+    </main>
+{% endblock contenido %}

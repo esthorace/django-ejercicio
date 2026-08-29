@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    Servicios | Lista
+{% endblock title %}
+{% block contenido %}
+    <h1>Servicios: Lista</h1>
+    <ol>
+        {% for servicio in servicios %}
+            <li>{{ servicio }} <a href="{% url 'servicios:servicio_update' servicio.id %}">Editar</a></li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'servicios:home' %}">Volver</a>
+{% endblock contenido %}
