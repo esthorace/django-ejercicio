@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    Servicios | Detalle
+{% endblock title %}
+{% block contenido %}
+    <h1>Servicios: Ver detalle</h1>
+    <ul>
+        <li>
+            <strong>Nombre:</strong>
+            {{ servicio.nombre }}
+        </li>
+        <li>
+            <strong>Descripción:</strong>
+            {% if servicio.descripcion %}
+                {{ servicio.descripcion }}
+            {% else %}
+                -
+            {% endif %}
+        </li>
+    </ul>
+    <a href="{% url 'servicios:servicio_list' %}">Volver</a>
+{% endblock contenido %}
