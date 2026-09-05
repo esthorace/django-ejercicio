@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    {% if form.instance.pk %}
+        Clientes | Actualizar
+    {% else %}
+        Clientes | Crear
+    {% endif %}
+{% endblock title %}
+{% block contenido %}
+    {% if form.instance.pk %}
+        <h1>Clientes: Actualizar</h1>
+    {% else %}
+        <h1>Clientes: Crear</h1>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'servicios:cliente_list' %}">Volver</a>
+{% endblock contenido %}

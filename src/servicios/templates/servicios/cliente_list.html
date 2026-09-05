@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    Clientes | Lista
+{% endblock title %}
+{% block contenido %}
+    <h1>Clientes: Lista</h1>
+    <ol>
+        {% for cliente in clientes %}
+            <li>
+                {{ cliente }}
+                <a href="{% url 'servicios:cliente_detail' cliente.pk %}">Ver</a>
+                <a href="{% url 'servicios:cliente_update' cliente.pk %}">Editar</a>
+                <a href="{% url 'servicios:cliente_delete' cliente.pk %}">Eliminar</a>
+            </li>
+        {% empty %}
+            <li>No hay clientes registrados.</li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'servicios:cliente_create' %}">Crear cliente</a>
+    <a href="{% url 'servicios:home' %}">Volver</a>
+{% endblock contenido %}

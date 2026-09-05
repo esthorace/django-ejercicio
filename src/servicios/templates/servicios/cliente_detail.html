@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    Clientes | Detalle
+{% endblock title %}
+{% block contenido %}
+    <h1>Clientes: Ver detalle</h1>
+    <ul>
+        <li><strong>Nombre:</strong> {{ cliente.nombre }}</li>
+        <li>
+            <strong>Teléfono:</strong>
+            {% if cliente.telefono %}{{ cliente.telefono }}{% else %}-{% endif %}
+        </li>
+        <li>
+            <strong>Email:</strong>
+            {% if cliente.email %}{{ cliente.email }}{% else %}-{% endif %}
+        </li>
+    </ul>
+    <a href="{% url 'servicios:cliente_list' %}">Volver</a>
+{% endblock contenido %}

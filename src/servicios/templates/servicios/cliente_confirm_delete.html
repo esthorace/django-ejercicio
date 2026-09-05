@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    Clientes | Eliminar
+{% endblock title %}
+{% block contenido %}
+    <h1>Clientes: Eliminar</h1>
+    <p>¿Eliminar el cliente "{{ cliente }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sí</button>
+    </form>
+    <a href="{% url 'servicios:cliente_list' %}">Volver</a>
+{% endblock contenido %}
