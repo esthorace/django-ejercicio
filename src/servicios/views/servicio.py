@@ -1,12 +1,20 @@
+__all__ = [
+    "servicio_create",
+    "servicio_delete",
+    "servicio_detail",
+    "servicio_list",
+    "servicio_update",
+]
+
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import ServicioForm
-from .models import Servicio
+from servicios.forms import ServicioForm
+from servicios.models import Servicio
 
 
-def index(request: HttpRequest) -> HttpResponse:
-    return render(request, "servicios/index.html")
+def hola():
+    return "Hola mundo"
 
 
 def servicio_list(request: HttpRequest) -> HttpResponse:
